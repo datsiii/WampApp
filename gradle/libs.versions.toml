@@ -10,6 +10,7 @@ activityCompose = "1.8.0"
 composeBom = "2024.04.01"
 
 hiltVersion = "2.46.1"
+hiltVersionNavigation = "1.2.0"
 kaptVersion = "1.9.0"
 retrofitVersion = "2.9.0"
 
@@ -17,6 +18,7 @@ retrofitVersion = "2.9.0"
 #dagger hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion"}
 hilt-android-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltVersion"}
+hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltVersionNavigation"}
 #retrofit
 retrofit-android = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion"}
 retrofit-android-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofitVersion"}
