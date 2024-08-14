@@ -1,4 +1,4 @@
-package com.example.wampserver
+package com.example.wampserver.data
 
 data class User(
     val name:String,

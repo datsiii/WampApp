@@ -1,10 +1,12 @@
 package com.example.wampserver
 
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.wampserver.data.ImageData
+import com.example.wampserver.data.User
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,6 +25,12 @@ class MainViewModel @Inject constructor(
     fun saveUser(user: User) = viewModelScope.launch {
         mainApi.saveUser(user)
         userList.value = mainApi.getAllUsers()
+    }
+
+    fun uploadImage(imageData: ImageData) = viewModelScope.launch {
+        val imageResponse = mainApi.uploadImage(imageData)
+        Log.d("MyLog", "Image URL: ${imageResponse.url}")
+        Log.d("MyLog", "Image upload message: ${imageResponse.message}")
     }
 
 
